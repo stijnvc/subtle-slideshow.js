@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>subtle-slideshow.js Demo</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="jquery.subtle-slideshow.js"></script>
+    <link rel="stylesheet" href="subtle-slideshow.css">
+    <style>
+      .static-content {
+        padding: 20px;
+      }
+      h1 {
+        font-family: sans-serif;
+        margin: 0;
+        position: absolute;
+        bottom: 20px;
+        color: white;
+        text-shadow: 0 2px 4px rgba(0,0,0,.4);
+      }
+    </style>
+  </head>
+  <body>
+
+    <div id="slides">
+      <a class="slide" title="Revolve Waterbottle | 2017" href="#">
+        <span class="animate down" style="background-image: url(https://stijnvancuijk.com/img/slideshow/fles-hero-image.jpg)"></span>
+        <div class="static-content"><h1>Revolve Waterbottle</h1></div>
+      </a>
+      <a class="slide" title="Lunchbox: Like Tableware | 2017" href="#">
+        <span class="animate in" style="background-image: url(https://stijnvancuijk.com/img/slideshow/lunchbox-hero.jpg)"></span>
+        <div class="static-content"><h1>Lunchbox</h1></div>
+      </a>
+      <a class="slide" title="Salad Shaker | 2017" href="#">
+        <span class="animate down" style="background-image: url(https://stijnvancuijk.com/img/slideshow/salad-shaker-hero.jpg)"></span>
+        <div class="static-content"><h1>Salad Shaker</h1></div>
+      </a>
+      <a class="slide" title="Bike Basket | 2016" href="#">
+        <span class="animate out" style="background-image: url(https://stijnvancuijk.com/img/slideshow/bike-basket-01.jpg)"></span>
+        <div class="static-content"><h1>Bike Basket</h1></div>
+      </a>
+      <a class="slide" title="MIDI Controller | 2018" href="#">
+        <span class="animate right" style="background-image: url(https://stijnvancuijk.com/img/portfolio/midi-controller.jpg)"></span>
+        <div class="static-content"><h1>MIDI Controller</h1></div>
+      </a>
+    </div>
+
+    <script>
+      // These are te default settings.
+      $('#slides').slideshow({
+        randomize: true,      // Randomize the play order of the slides.
+        slideDuration: 6000,  // Duration of each induvidual slide.
+        fadeDuration: 1000,    // Duration of the fading transition. Should be shorter than slideDuration.
+        animate: true,        // Turn css animations on or off.
+        pauseOnTabBlur: true, // Pause the slideshow when the tab is out of focus. This prevents glitches with setTimeout().
+        enableLog: false      // Enable log messages to the console. Useful for debugging.
+      });
+    </script>
+
+  </body>
+</html>

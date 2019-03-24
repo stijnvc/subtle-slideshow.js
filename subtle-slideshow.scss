@@ -1,0 +1,253 @@
+
+$slide-distance: calc((4vw + 4vh + 4%)/3);
+
+$slide-distance-ms: 4%; // IE11 does not support calc() in transform:translate;
+
+$slide-distance-negative: calc((-4vw + -4vh + -4%)/3);
+
+$zoom-scale: 1.15;
+
+// Option for slide distance without calc(). More compatible but not as
+// consistant on screens that are not exactely square.
+//
+// $slide-distance: 5%;
+// $slide-distance-negative: -5%;
+
+// The 0.01deg rotation is a hack to make the animations smooth on Firefox
+
+@-webkit-keyframes right {
+  from {
+    -webkit-transform: translateX($slide-distance-negative) rotate(0.01deg);
+            transform: translateX($slide-distance-negative) rotate(0.01deg);
+    -ms-transform: translateX(-$slide-distance-ms);
+  }
+  to {
+    -webkit-transform: translateX($slide-distance) rotate(0.01deg);
+            transform: translateX($slide-distance) rotate(0.01deg);
+    -ms-transform: translateX($slide-distance-ms);
+  }
+}
+
+@keyframes right {
+  from {
+    -webkit-transform: translateX($slide-distance-negative) rotate(0.01deg);
+            transform: translateX($slide-distance-negative) rotate(0.01deg);
+    -ms-transform: translateX(-$slide-distance-ms);
+  }
+  to {
+    -webkit-transform: translateX($slide-distance) rotate(0.01deg);
+            transform: translateX($slide-distance) rotate(0.01deg);
+    -ms-transform: translateX($slide-distance-ms);
+  }
+}
+
+@-webkit-keyframes left {
+  from {
+    -webkit-transform: translateX($slide-distance) rotate(0.01deg);
+            transform: translateX($slide-distance) rotate(0.01deg);
+    -ms-transform: translateX($slide-distance-ms);
+  }
+  to {
+    -webkit-transform: translateX($slide-distance-negative) rotate(0.01deg);
+            transform: translateX($slide-distance-negative) rotate(0.01deg);
+    -ms-transform: translateX(-$slide-distance-ms);
+  }
+}
+
+@keyframes left {
+  from {
+    -webkit-transform: translateX($slide-distance) rotate(0.01deg);
+            transform: translateX($slide-distance) rotate(0.01deg);
+    -ms-transform: translateX($slide-distance-ms);
+  }
+  to {
+    -webkit-transform: translateX($slide-distance-negative) rotate(0.01deg);
+            transform: translateX($slide-distance-negative) rotate(0.01deg);
+    -ms-transform: translateX(-$slide-distance-ms);
+  }
+}
+
+@-webkit-keyframes down {
+  from {
+    -webkit-transform: translateY($slide-distance-negative) rotate(0.01deg);
+            transform: translateY($slide-distance-negative) rotate(0.01deg);
+    -ms-transform: translateY(-$slide-distance-ms);
+  }
+  to {
+    -webkit-transform: translateY($slide-distance) rotate(0.01deg);
+            transform: translateY($slide-distance) rotate(0.01deg);
+    -ms-transform: translateY($slide-distance-ms);
+  }
+}
+
+@keyframes down {
+  from {
+    -webkit-transform: translateY($slide-distance-negative) rotate(0.01deg);
+            transform: translateY($slide-distance-negative) rotate(0.01deg);
+    -ms-transform: translateY(-$slide-distance-ms);
+  }
+  to {
+    -webkit-transform: translateY($slide-distance) rotate(0.01deg);
+            transform: translateY($slide-distance) rotate(0.01deg);
+    -ms-transform: translateY($slide-distance-ms);
+  }
+}
+
+@-webkit-keyframes up {
+  from {
+    -webkit-transform: translateY($slide-distance) rotate(0.01deg);
+            transform: translateY($slide-distance) rotate(0.01deg);
+    -ms-transform: translateY($slide-distance-ms);
+  }
+  to {
+    -webkit-transform: translateY($slide-distance-negative) rotate(0.01deg);
+            transform: translateY($slide-distance-negative) rotate(0.01deg);
+    -ms-transform: translateY(-$slide-distance-ms);
+  }
+}
+
+@keyframes up {
+  from {
+    -webkit-transform: translateY($slide-distance) rotate(0.01deg);
+            transform: translateY($slide-distance) rotate(0.01deg);
+    -ms-transform: translateY($slide-distance-ms);
+  }
+  to {
+    -webkit-transform: translateY($slide-distance-negative) rotate(0.01deg);
+            transform: translateY($slide-distance-negative) rotate(0.01deg);
+    -ms-transform: translateY(-$slide-distance-ms);
+  }
+}
+
+@-webkit-keyframes out {
+  from {
+    -webkit-transform: scale($zoom-scale);
+            transform: scale($zoom-scale);
+  }
+  to {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@keyframes out {
+  from {
+    -webkit-transform: scale($zoom-scale);
+            transform: scale($zoom-scale);
+  }
+  to {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@-webkit-keyframes in {
+  from {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  to {
+    -webkit-transform: scale($zoom-scale);
+            transform: scale($zoom-scale);
+  }
+}
+
+@keyframes in {
+  from {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  to {
+    -webkit-transform: scale($zoom-scale);
+            transform: scale($zoom-scale);
+  }
+}
+
+#slides {
+  position: fixed;
+  width: 1px;
+  height: 1px;
+  left: -9999px;
+}
+
+#slideshow {
+  position: fixed;
+  overflow: hidden;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  .slide, span, .static-content {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+
+  .slide {
+
+    span {
+      background-size: cover;
+      background-position: center;
+    }
+
+    span.animate.right, span.animate.left {
+      left: $slide-distance-negative;
+      right: $slide-distance-negative;
+    }
+
+    span.animate.up, span.animate.down {
+      top: $slide-distance-negative;
+      bottom: $slide-distance-negative;
+    }
+
+  }
+
+  // Time gets set by JS
+
+  span.animate {
+    -webkit-animation-fill-mode: forwards;
+            animation-fill-mode: forwards;
+    -webkit-animation-timing-function: linear;
+            animation-timing-function: linear;
+  }
+
+  span.animate.right {
+    -webkit-animation-name: right;
+            animation-name: right;
+  }
+
+  span.animate.left {
+    -webkit-animation-name: left;
+            animation-name: left;
+  }
+
+  span.animate.up {
+    -webkit-animation-name: up;
+            animation-name: up;
+  }
+
+  span.animate.down {
+    -webkit-animation-name: down;
+            animation-name: down;
+  }
+
+  span.animate.in {
+    -webkit-animation-name: in;
+            animation-name: in;
+  }
+
+  span.animate.out {
+    -webkit-animation-name: out;
+            animation-name: out;
+  }
+
+  span.animate.paused {
+    -webkit-animation-play-state: paused;
+            animation-play-state: paused;
+  }
+
+}

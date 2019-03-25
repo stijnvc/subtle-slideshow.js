@@ -72,3 +72,5 @@ Subtle-slideshow.js will generate a `div#slideshow` right above `#slides`. This 
   bottom: 0;
 }
 ```
+---
+[MIT License](https://opensource.org/licenses/MIT)

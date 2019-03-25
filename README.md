@@ -12,7 +12,7 @@ First download `jquery.subtle-slideshow.js` and `subtle-slideshow.css` and inclu
 <link rel="stylesheet" href="subtle-slideshow.css">
 ```
 
-Then put your slides anywhere within the `body` element. There is a minimum of two slides needed for the slideshow to work (duh!). The slides are made up of:
+Then put your slides anywhere within the `body` element. There is a minimum of two slides needed for the slideshow to work (duh!). The slides are made up of (example below):
 
 1. The `#slides` div element, which contains all your slides. Put this where you want your slideshow. The element itself will be hidden, the plugin will use it to draw the slides from. (The id `#slides` is necessary unless you want to update `subtle-slideshow.css` manually to match the custom id.)
 2. Inside the `#slides` element there are the individual `.slide` elements. These can be `<a>` or `<div>`, doesn't really matter, as long as it can contain other elements and is compatible with `position: absolute;`. The slides will be cycled through during the slideshow. (Again, the `.slides` classname is necessary unless you want to change `subtle-slideshow.css` manually.)

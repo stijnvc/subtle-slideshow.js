@@ -17,12 +17,12 @@ Then put your slides anywhere within the `body` element. There is a minimum of t
 1. The `#slides` div element, which contains all your slides. Put this where you want your slideshow. The element itself will be hidden, the plugin will use it to draw the slides from. (The id `#slides` is necessary unless you want to update `subtle-slideshow.css` manually to match the custom id.)
 2. Inside the `#slides` element there are the individual `.slide` elements. These can be `<a>` or `<div>`, doesn't really matter, as long as it can contain other elements and is compatible with `position: absolute;`. The slides will be cycled through during the slideshow. (Again, the `.slides` classname is necessary unless you want to change `subtle-slideshow.css` manually.)
 2. Each slide has a `<span>` element which can be animated to move left, right, up, down or zoom in or out. The easiest way to make an image slideshow is to give these `span` elements an `image-background`. This background image will be sized and positioned proportionally to fill the entire slidehow. To animate the `<span>` element you have to give it the `.animate` class. Along with this you have to define the animation type by giving it one of the following classnames:
-  - `.left`: move left.
-  - `.right`: move right.
-  - `.up`: move up.
-  - `.down`: move down.
-  - `.in`: zoom in.
-  - `.out`: zoom out.
+   * `.left`: move left.
+   * `.right`: move right.
+   * `.up`: move up.
+   * `.down`: move down.
+   * `.in`: zoom in.
+   * `.out`: zoom out.
 4. You can use a div with a `.static-content` class for putting content in the slide that isn't animated, like titles or what have you.
 
 ```html

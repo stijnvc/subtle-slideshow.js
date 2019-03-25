@@ -46,7 +46,7 @@ $.fn.slideshow = function(options){
     var cssAnimationDuration = 0;
   }
 
-  console.log('skb-slideshow.js initialized.');
+  console.log('Slideshow initialized.');
 
   // Add the first slide to the slideshow
   slides.find('.' + settings.slideElementClass + ':first span.animate').addClass('active').css('animation-duration', cssAnimationDuration + 'ms')

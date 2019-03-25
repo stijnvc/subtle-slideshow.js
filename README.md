@@ -28,24 +28,16 @@ Then put your slides anywhere within the `body` element. There is a minimum of t
 ```html
 <div id="slides">
   <a class="slide" href="#link01">
-    <span class="animate down" style="background-image: url(https://stijnvancuijk.com/img/slideshow/fles-hero-image.jpg)"></span>
+    <span class="animate right" style="background-image: url(your-image-01.jpg)"></span>
     <div class="static-content"><h1>Revolve Waterbottle</h1></div>
   </a>
   <a class="slide" href="#link02">
-    <span class="animate in" style="background-image: url(https://stijnvancuijk.com/img/slideshow/lunchbox-hero.jpg)"></span>
+    <span class="animate in" style="background-image: url(your-image-02.jpg)"></span>
     <div class="static-content"><h1>Lunchbox</h1></div>
   </a>
   <a class="slide" href="#link03">
-    <span class="animate down" style="background-image: url(https://stijnvancuijk.com/img/slideshow/salad-shaker-hero.jpg)"></span>
+    <span class="animate down" style="background-image: url(your-image-03.jpg)"></span>
     <div class="static-content"><h1>Salad Shaker</h1></div>
-  </a>
-  <a class="slide" href="#link04">
-    <span class="animate out" style="background-image: url(https://stijnvancuijk.com/img/slideshow/bike-basket-01.jpg)"></span>
-    <div class="static-content"><h1>Bike Basket</h1></div>
-  </a>
-  <a class="slide" href="#link05">
-    <span class="animate right" style="background-image: url(https://stijnvancuijk.com/img/portfolio/midi-controller.jpg)"></span>
-    <div class="static-content"><h1>MIDI Controller</h1></div>
   </a>
 </div>
 ```

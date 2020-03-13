@@ -77,14 +77,14 @@ $zoom-scale: 1.15;
   }
 }
 
-#slides {
+.slides {  
   position: fixed;
   width: 1px;
   height: 1px;
   left: -9999px;
 }
 
-#slideshow {
+.slideshow {
   position: fixed;
   overflow: hidden;
   top: 0;

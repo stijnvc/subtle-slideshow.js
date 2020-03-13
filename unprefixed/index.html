@@ -19,11 +19,21 @@
         color: white;
         text-shadow: 0 2px 4px rgba(0,0,0,.4);
       }
+      #slideshow-1 {
+        position: relative; /* 'relative' or 'absolute' will also work. */
+        width: 900px;
+        height: 600px;
+      }
+      #slideshow-2 {
+        position: relative; /* 'relative' or 'absolute' will also work. */
+        width: 900px;
+        height: 600px;
+      }
     </style>
   </head>
   <body>
 
-    <div id="slides">
+    <div id="slides-1" class="slides">
       <a class="slide" title="Revolve Waterbottle | 2017" href="#">
         <span class="animate down" style="background-image: url(https://stijnvancuijk.com/img/slideshow/fles-hero-image.jpg)"></span>
         <div class="static-content"><h1>Revolve Waterbottle</h1></div>
@@ -46,16 +56,58 @@
       </a>
     </div>
 
+    <div id="slides-2" class="slides">
+      <a class="slide" title="Revolve Waterbottle | 2017" href="#">
+        <span class="animate down" style="background-image: url(https://stijnvancuijk.com/img/slideshow/fles-hero-image.jpg)"></span>
+        <div class="static-content"><h1>Revolve Waterbottle</h1></div>
+      </a>
+      <a class="slide" title="Lunchbox: Like Tableware | 2017" href="#">
+        <span class="animate in" style="background-image: url(https://stijnvancuijk.com/img/slideshow/lunchbox-hero.jpg)"></span>
+        <div class="static-content"><h1>Lunchbox</h1></div>
+      </a>
+      <a class="slide" title="Salad Shaker | 2017" href="#">
+        <span class="animate down" style="background-image: url(https://stijnvancuijk.com/img/slideshow/salad-shaker-hero.jpg)"></span>
+        <div class="static-content"><h1>Salad Shaker</h1></div>
+      </a>
+      <a class="slide" title="Bike Basket | 2016" href="#">
+        <span class="animate out" style="background-image: url(https://stijnvancuijk.com/img/slideshow/bike-basket-01.jpg)"></span>
+        <div class="static-content"><h1>Bike Basket</h1></div>
+      </a>
+      <a class="slide" title="MIDI Controller | 2018" href="#">
+        <span class="animate right" style="background-image: url(https://stijnvancuijk.com/img/portfolio/midi-controller.jpg)"></span>
+        <div class="static-content"><h1>MIDI Controller</h1></div>
+      </a>
+    </div>
+
+    <button>Pause</button>
+
     <script>
       // These are te default settings.
-      $('#slides').slideshow({
+      $('#slides-1').slideshow({
         randomize: true,      // Randomize the play order of the slides.
-        slideDuration: 6000,  // Duration of each induvidual slide.
-        fadeDuration: 1000,    // Duration of the fading transition. Should be shorter than slideDuration.
+        slideDuration: 3000,  // Duration of each induvidual slide.
+        fadeDuration: 600,    // Duration of the fading transition. Should be shorter than slideDuration.
         animate: true,        // Turn css animations on or off.
         pauseOnTabBlur: true, // Pause the slideshow when the tab is out of focus. This prevents glitches with setTimeout().
-        enableLog: false      // Enable log messages to the console. Useful for debugging.
+        enableLog: true,      // Enable log messages to the console. Useful for debugging.
+        slideshowId: 'slideshow-1'
       });
+
+      $('#slides-2').slideshow({
+        randomize: true,      // Randomize the play order of the slides.
+        slideDuration: 2000,  // Duration of each induvidual slide.
+        fadeDuration: 600,    // Duration of the fading transition. Should be shorter than slideDuration.
+        animate: true,        // Turn css animations on or off.
+        pauseOnTabBlur: true, // Pause the slideshow when the tab is out of focus. This prevents glitches with setTimeout().
+        enableLog: true,      // Enable log messages to the console. Useful for debugging.
+        slideshowId: 'slideshow-2'
+      });
+
+      $('button').on('click', function(){
+        $('#slides-2').slideshow().pause;
+      } );
+
+
     </script>
 
   </body>

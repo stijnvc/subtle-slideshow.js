@@ -1,3 +1,5 @@
+This plugin is no longer maintained.
+
 # subtle-slideshow.js
 
 A jQuery slideshow plugin (haha yes another one) with a subtle Ken Burns effect using CSS3 animations. It has no controls or anything fancy like that, just some tasteful animation and transition effects, which you can customize. The slides can contain anything you want (images, videos, etc.), but images are best supported. On [this demo page](https://stijnvc.github.io/subtle-slideshow.js/) you can see an example of what it can look like.
